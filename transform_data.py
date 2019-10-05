@@ -22,6 +22,6 @@ def cambiar_tipo_variable(archivo,variable,tipo):
 def cambiar_minusculas_variable(archivo,variable):
     archivo[variable]=archivo[variable].str.lower()
     
-    
-#faltarìa una que quite acentoso se podrìa agregar a la de cambiar_minusculas_variable cambiando el nombre
-    
+def quitar_acentos(archivo):
+    cols = archivo.select_dtypes(include=[np.object]).columns
+    archivo[cols] = archivo[cols].apply(lambda x: x.str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8'))
