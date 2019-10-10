@@ -13,8 +13,8 @@ def separar_variable(archivo,variable_separar,variable1_nueva,variable2_nueva,se
 
 
 def eliminar_variable(archivo,variable):
-    archivo=archivo.drop(variable, 1)
-
+    archivo=archivo.drop(variable, axis='columns',inplace=True)
+    
 
 def cambiar_tipo_variable(archivo,variable,tipo):
     archivo[variable]=archivo[variable].astype(tipo)
