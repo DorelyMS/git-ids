@@ -2,6 +2,7 @@
 
 #Este módulo muestra el tipo de cada variable, separa columnas .
 
+import numpy as np
 
 def tipo_variables(archivo):
     print('\nTipo de variables:\n', archivo.dtypes) #el tipo de cada variable
