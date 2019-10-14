@@ -60,6 +60,11 @@ def grafico_barplot_orden_decreciente(archivo,variable_ejex,variable_ejey,etique
     graf.set_xticklabels(graf.get_xticklabels(), rotation=40, ha="right")
     graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
 
+def tabla_ranking_n(archivo,n,categoria1,categoria2,variablenumerica):
+    tabla=archivo.pivot_table(index=[categoria1,categoria2],values=[variablenumerica],aggfunc=np.mean)
+    topn=tabla.sort_values(by=variablenumerica,ascending=False).head(n)
+    return topn    
+    
 def grafico_barplot_orden_en_barras(archivo,variable_ejex,variable_ejey,lista_orden_barras,etiqueta_ejex,etiqueta_ejey,titulo):
     graf=sns.catplot(x=variable_ejex, y=variable_ejey,order=lista_orden_barras,
                 kind="bar",data=archivo)
@@ -79,4 +84,4 @@ def grafico_tipo_uso(archivo,tipo_consumo,etiqueta_ejex,etiqueta_ejey,titulo):
     graf = sns.boxplot(x="consumo", y="tipo_consumo", data=consumos, whis=np.inf)
     graf = sns.stripplot(x="consumo", y="tipo_consumo", data=consumos,jitter=True, linewidth=1)
     graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
-        
+
