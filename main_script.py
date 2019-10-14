@@ -93,8 +93,11 @@ eda.grafico_barplot_orden_en_barras(datos,'indice_des','consumo_total',['popular
 eda.grafico_strip(datos,'bimestre','consumo_total','Bimestre de 2019','Consumo de agua total','Consumo de agua promedio por bimestre')
 
 
-# In[ ]:
+# In[15]:
+
+eda.grafico_tipo_uso(datos,'total','consumos totales','tipos de uso','Consumos por tipo de uso del inmueble')
 
 
+# In[16]:
 
-
+eda.grafico_tipo_uso(datos,'prom','consumos promedio','tipos de uso','Consumos por tipo de uso del inmueble')
