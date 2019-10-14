@@ -85,3 +85,6 @@ def grafico_tipo_uso(archivo,tipo_consumo,etiqueta_ejex,etiqueta_ejey,titulo):
     graf = sns.stripplot(x="consumo", y="tipo_consumo", data=consumos,jitter=True, linewidth=1)
     graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
 
+def matriz_correlacion(archivo):
+    plt.figure(figsize=(6,6))
+    sns.heatmap(archivo.corr(),vmin=-1,cmap='RdYlGn');
