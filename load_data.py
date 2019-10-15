@@ -1,5 +1,4 @@
-
-#Este módulo carga la información del archivo indicado, en este caso del consumo de agua en la Cuidad de México, el cual es un csv separado por punto y comas e imprime el número de observaciones y variables.
+#Este módulo carga la información del archivo indicado, en este caso del consumo de agua en la Ciudad de México, el cual es un csv separado por punto y comas e imprime el número de observaciones y variables.
 
 import pandas as pd
 

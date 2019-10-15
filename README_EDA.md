@@ -1,12 +1,1 @@
-**Tarea 2 Exploratory Data Analysis (EDA)**
-
-*Requerimientos iniciales.*   
-
-Importar los paquetes con la versión que se indica en el archivo requirements.txt.
-
-
-Si el archivo "consumo-agua.csv" se encuentra en la misma ruta donde se encuentran los scripts (archivos .py), en la función "carga_archivo" del módulo load_data.py, bastará con poner el nombre y la extensión, de lo contrario, se deberá especificar adicionalmente la ruta donde se encuentra dicho archivo.
-
-*¿Cómo  correr los scripts?*
-
-Para correr los 4 scripts (load_data.py, clean_data.py, transform_data.py y  eda.py), es necesario ejecutar el script principal (main_script.py), mismo que se anexa.
+﻿﻿﻿﻿﻿﻿**Tarea 2 Graphical and Exploratory Data Analysis (EDA/GDA) de datos de Consumo de agua CDMX***Requerimientos iniciales.*   Importar los paquetes con la versión que se indica en el archivo "requirements.txt".Colocar el archivo "consumo-agua.csv" (la liga de descarga web es: https://datos.cdmx.gob.mx/explore/dataset/consumo-agua/download/?format=csv&timezone=America/Mexico_City&use_labels_for_header=true) dentro de la subcarpeta "eda" que quedó en la ruta donde se hizo el pull del proyecto (".../introduction-to-data-science-2019/alumnos/maggie_muñoz/eda/" que es donde están los scripts: archivos.py). Luego, en la función "carga\_archivo" del módulo "load\_data.py", bastará con poner: "consumo-agua.csv", de lo contrario, se deberá especificar adicionalmente la ruta donde se encuentra dicho archivo.*¿Cómo  correr los scripts?*Para correr los 4 scripts (load\_data.py, clean\_data.py, transform\_data.py y  eda.py), es necesario ejecutar el script principal (main\_script.py), mismo que se anexa.El archivo "Reporte_EDA_GDA.html" también se encuentra disponible para su consulta dentro de la subcarpeta "eda".

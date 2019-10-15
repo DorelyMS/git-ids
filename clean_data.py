@@ -1,6 +1,4 @@
-#Este módulo estandariza el nombre de variables
-
-
+#Este módulo estandariza el nombre de variables 
 
 def estandariza_variables(archivo):
     columnas_antes=archivo.columns

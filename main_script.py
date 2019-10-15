@@ -77,40 +77,58 @@ eda.tabla_estadisticos_descriptivos_variables_categoricas(datos)
 # In[12]:
 
 
-eda.grafico_barplot_orden_decreciente(datos,'alcaldia','consumo_total','Alcaldía','consumo de agua total','Consumo de agua promedio por manzana en cada alcaldía')
-    
+eda.grafico_histograma_categorica(datos,"alcaldia","Alcaldías","Conteos","Histograma de Alcaldías")
+
 
 # In[13]:
 
 
-eda.tabla_ranking_n(datos,15,"colonia","alcaldia",'consumo_total')
+eda.grafico_histograma_categorica(datos,"bimestre","Bimestre","Conteos","Histograma de Bimestre")
 
 
 # In[14]:
 
 
-eda.grafico_barplot_orden_en_barras(datos,'indice_des','consumo_total',['popular','bajo','medio','alto'],'Índice de desarrollo','Consumo de agua total','Consumo de agua promedio por índice de desarrollo')
+eda.grafico_histograma_categorica(datos,"indice_des","Índice de Desarrollo","Conteos","Histograma de Índice de Desarrollo")
 
 
 # In[15]:
 
 
-eda.grafico_tipo_uso(datos,'total','consumos totales','tipos de uso','Consumos por tipo de uso del inmueble')
-
+eda.grafico_barplot_orden_decreciente(datos,'alcaldia','consumo_total','Alcaldía','consumo de agua total','Consumo de agua promedio por manzana en cada alcaldía')
+    
 
 # In[16]:
 
 
-eda.grafico_tipo_uso(datos,'prom','consumos promedio','tipos de uso','Consumos por tipo de uso del inmueble')
+eda.tabla_ranking_n(datos,15,"colonia","alcaldia",'consumo_total')
 
 
 # In[17]:
 
 
-eda.grafico_strip(datos,'bimestre','consumo_total','Bimestre de 2019','Consumo de agua total','Consumo de agua promedio por bimestre')
+eda.grafico_barplot_orden_en_barras(datos,'indice_des','consumo_total',['popular','bajo','medio','alto'],'Índice de desarrollo','Consumo de agua total','Consumo de agua promedio por índice de desarrollo')
 
 
 # In[18]:
+
+
+eda.grafico_tipo_uso(datos,'total','consumos totales','tipos de uso','Consumos por tipo de uso del inmueble')
+
+
+# In[19]:
+
+
+eda.grafico_tipo_uso(datos,'prom','consumos promedio','tipos de uso','Consumos por tipo de uso del inmueble')
+
+
+# In[20]:
+
+
+eda.grafico_strip(datos,'bimestre','consumo_total','Bimestre de 2019','Consumo de agua total','Consumo de agua promedio por bimestre')
+
+
+# In[21]:
 
 
 eda.matriz_correlacion(datos)

@@ -1,9 +1,5 @@
+#Este módulo contiene todas las funciones utilizadas para generar el reporte EDA, GDA
 
-#EDA
-
-#Esta función genera el cuadro de estadísticas descriptivas
-
-#import statistics as stats
 import seaborn as sns
 import numpy as np
 import pandas as pd
@@ -53,6 +49,11 @@ def tabla_estadisticos_descriptivos_variables_categoricas(archivo):
     archivocat=selecciona_variables_categoricas(archivo).agg(['count',uniques,uniques_list,missings,prop_missings])
     return archivocat
 
+def grafico_histograma_categorica(archivo,categoria,etiqueta_ejex,etiqueta_ejey,titulo):
+    result=archivo.groupby([categoria])["gid"].count().reset_index().sort_values("gid",ascending=False)
+    graf=sns.countplot(x=categoria, palette="Paired", data=archivo,order=result[categoria].values);
+    graf.set_xticklabels(graf.get_xticklabels(), rotation=45, ha="right")
+    graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)    
 
 def grafico_barplot_orden_decreciente(archivo,variable_ejex,variable_ejey,etiqueta_ejex,etiqueta_ejey,titulo):
     result = archivo.groupby([variable_ejex])[variable_ejey].mean().reset_index().sort_values(variable_ejey,ascending=False)
@@ -69,11 +70,7 @@ def grafico_barplot_orden_en_barras(archivo,variable_ejex,variable_ejey,lista_or
     graf=sns.catplot(x=variable_ejex, y=variable_ejey,order=lista_orden_barras,
                 kind="bar",data=archivo)
     graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
-    
-def grafico_strip(archivo,variable_ejex,variable_ejey,etiqueta_ejex,etiqueta_ejey,titulo):
-    graf=sns.catplot(x=variable_ejex, y=variable_ejey,kind="strip", dodge=False, data=archivo, palette="pastel")
-    graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
-        
+            
 def grafico_tipo_uso(archivo,tipo_consumo,etiqueta_ejex,etiqueta_ejey,titulo):
     if tipo_consumo=="total":
         consumos=archivo.melt(id_vars=['nomgeo','alcaldia','colonia','bimestre','indice_des','gid'],value_vars=['consumo_total_dom','consumo_total_mixto','consumo_total_no_dom'],var_name='tipo_consumo', value_name='consumo')
@@ -84,7 +81,11 @@ def grafico_tipo_uso(archivo,tipo_consumo,etiqueta_ejex,etiqueta_ejey,titulo):
     graf = sns.boxplot(x="consumo", y="tipo_consumo", data=consumos, whis=np.inf)
     graf = sns.stripplot(x="consumo", y="tipo_consumo", data=consumos,jitter=True, linewidth=1)
     graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
-
+    
+def grafico_strip(archivo,variable_ejex,variable_ejey,etiqueta_ejex,etiqueta_ejey,titulo):
+    graf=sns.catplot(x=variable_ejex, y=variable_ejey,kind="strip", dodge=False, data=archivo, palette="pastel")
+    graf.set(xlabel=etiqueta_ejex, ylabel=etiqueta_ejey, title=titulo)
+        
 def matriz_correlacion(archivo):
     plt.figure(figsize=(6,6))
     sns.heatmap(archivo.corr(),vmin=-1,cmap='RdYlGn');

@@ -1,6 +1,4 @@
-
-
-#Este módulo muestra el tipo de cada variable, separa columnas .
+#Este módulo contiene las funciones que se utilizan para hacer las transformaciones necesarias a la base de consumo de agua en CDMX, muestra el tipo de cada variable, separar una variable en 2 columnas, eliminar variables, cambiar el tipo de variable, convertir a minúsculas y quitar los acentos.
 
 import numpy as np
 
